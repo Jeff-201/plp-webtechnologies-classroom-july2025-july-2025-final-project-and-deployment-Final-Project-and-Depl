@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Solara Studio — Home</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Solara Studio home">
+        <img src="images/logo.svg" alt="Solara Studio logo" />
+      </a>
+      <button id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav id="primary-nav" class="nav" role="navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1>Design-driven web experiences that convert.</h1>
+          <p class="lead">We build responsive, accessible websites for startups and creatives.</p>
+          <p><a class="btn" href="services.html">See Services</a> <a class="btn ghost" href="contact.html">Get in touch</a></p>
+        </div>
+        <figure class="hero-image" aria-hidden="true">
+          <img src="images/hero.jpg" alt="" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="features container" id="features">
+      <article class="feature">
+        <h2>Responsive Design</h2>
+        <p>Looks great on phones, tablets and desktops.</p>
+      </article>
+      <article class="feature">
+        <h2>Accessible</h2>
+        <p>Semantic HTML and keyboard-friendly navigation.</p>
+      </article>
+      <article class="feature">
+        <h2>Fast & Optimized</h2>
+        <p>Careful assets and performance-first patterns.</p>
+      </article>
+    </section>
+
+    <section class="work container">
+      <h2>Recent projects</h2>
+      <div class="cards">
+        <div class="card">Project 1</div>
+        <div class="card">Project 2</div>
+        <div class="card">Project 3</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Solara Studio — Built with care.</p>
+      <nav aria-label="Footer">
+        <a href="privacy.html" class="muted">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

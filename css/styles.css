@@ -1,0 +1,88 @@
+/* styles.css - Mobile-first responsive styles */
+/* Basic resets */
+:root{
+  --max-width: 1100px;
+  --accent: #0b76ef;
+  --muted: #6b7280;
+  --radius: 8px;
+  --gap: 1rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;line-height:1.5;color:#111;background:#fff}
+
+/* Utility container */
+.container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+
+/* Header */
+.site-header{border-bottom:1px solid #eee;background:#fff;position:sticky;top:0;z-index:20}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo img{height:40px}
+
+/* Navigation */
+#nav-toggle{background:none;border:0;display:inline-flex;padding:8px}
+.hamburger{display:block;width:22px;height:2px;background:#333;position:relative}
+.hamburger::after,.hamburger::before{content:"";position:absolute;left:0;width:22px;height:2px;background:#333}
+.hamburger::before{top:-7px} .hamburger::after{top:7px}
+
+.nav{display:none}
+.nav-list{list-style:none;padding:0;margin:0;display:flex;gap:1rem}
+.nav-list a{text-decoration:none;color:inherit;padding:0.5rem;border-radius:6px}
+.nav-list a:hover,.nav-list a.active{background:#f3f4f6}
+
+/* Hero */
+.hero{padding:3rem 0}
+.hero-inner{display:grid;grid-template-columns:1fr;gap:1.5rem;align-items:center}
+.hero h1{margin:0;font-size:clamp(1.6rem,3.6vw,2.6rem)}
+.lead{color:var(--muted)}
+
+/* Buttons */
+.btn{display:inline-block;padding:0.6rem 1rem;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.btn.small{padding:0.4rem 0.6rem;border-radius:6px}
+
+/* Feature grid */
+.features{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:2rem}
+.feature{text-align:center;padding:1rem;border-radius:8px;background:#fafafa}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:1fr;gap:1rem}
+.card{padding:1rem;border-radius:8px;background:#fff;border:1px solid #eee;box-shadow:0 1px 2px rgba(0,0,0,0.03)}
+
+/* Footer */
+.site-footer{border-top:1px solid #eee;padding:1rem 0;margin-top:2rem;color:var(--muted);background:#fff}
+
+/* Forms */
+.form-row{margin-bottom:1rem;display:flex;flex-direction:column}
+input,textarea{padding:0.6rem;border:1px solid #ddd;border-radius:8px}
+.error{color:#b91c1c;font-size:0.9rem;min-height:1.2rem;margin-top:0.25rem}
+
+/* Accessibility focus */
+a:focus, button:focus, input:focus, textarea:focus{outline:3px solid rgba(11,118,239,0.15);outline-offset:2px}
+
+/* Larger screens */
+@media(min-width:720px){
+  .nav{display:block}
+  #nav-toggle{display:none}
+  .hero-inner{grid-template-columns:1fr 1fr}
+  .features{grid-template-columns:repeat(3,1fr)}
+  .cards{grid-template-columns:repeat(3,1fr)}
+}
+
+@media(min-width:1000px){
+  .container{padding:2rem}
+}
+@media(prefers-color-scheme:dark){
+  :root{color-scheme: dark;--accent: #3ea6ff}
+  body{color:#ddd;background:#121212}
+  .site-header,.site-footer{background:#1e1e1e;border-color:#333}
+  .nav-list a:hover,.nav-list a.active{background:#333}
+  .hero{background:#1e1e1e}
+  .feature{background:#1a1a1a}
+  .card{background:#1e1e1e;border-color:#333;box-shadow:0 1px 2px rgba(0,0,0,0.5)}
+  input,textarea{background:#1e1e1e;border-color:#333;color:#ddd}
+  input::placeholder,textarea::placeholder{color:var(--muted)}
+}
